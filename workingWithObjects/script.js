@@ -107,7 +107,9 @@ function calcSchool(objectName) {
         };
       }
     }
-    console.log("Top grade in Class" + i + " is", result.grade, "earned by", result.fullName);
+    console.log("Top grade in Class" + i + " is:", result.grade);
+    console.log("Earned by:", result.fullName);
+    console.log("");
     x = 0;
   }
 }
