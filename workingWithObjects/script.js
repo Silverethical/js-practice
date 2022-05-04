@@ -102,7 +102,6 @@ function calcSchool(objectName) {
   for (let i = 1; i <= Object.keys(objectName).length; i++) {
     for (let j = 1; j <= Object.keys(objectName["class" + i]).length; j++) {
       if (objectName["class" + i]["student" + j].grade > result.grade) {
-        result.grade = objectName["class" + i]["student" + j].grade;
         result = {
           fullName: objectName["class" + i]["student" + j].fullName,
           grade: objectName["class" + i]["student" + j].grade,
