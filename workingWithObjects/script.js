@@ -5,14 +5,14 @@ let school = {
   class1: {
     student1: {
       fullName: "Erwin Smith",
-      grade: 20,
+      grade: 22,
       phoneNumber: "09171234567",
       nationalID: "1234567890",
       age: 37,
     },
     student2: {
       fullName: "Levi Ackerman",
-      grade: 22,
+      grade: 20,
       phoneNumber: "09178294842",
       nationalID: "5678901234",
       age: 33,
@@ -95,22 +95,24 @@ let school = {
 };
 
 function calcSchool(objectName) {
-  let x = 0;
-  let result;
+  let result = {
+    fullName: "",
+    grade: 0,
+  };
   for (let i = 1; i <= Object.keys(objectName).length; i++) {
     for (let j = 1; j <= Object.keys(objectName["class" + i]).length; j++) {
-      if (objectName["class" + i]["student" + j].grade > x) {
-        x = objectName["class" + i]["student" + j].grade;
+      if (objectName["class" + i]["student" + j].grade > result.grade) {
+        result.grade = objectName["class" + i]["student" + j].grade;
         result = {
           fullName: objectName["class" + i]["student" + j].fullName,
           grade: objectName["class" + i]["student" + j].grade,
         };
       }
     }
-    console.log("Top grade in Class" + i + " is:", result.grade);
+    console.log("Top grade in Class", i, "is:", result.grade);
     console.log("Earned by:", result.fullName);
     console.log("");
-    x = 0;
+    result.grade = 0;
   }
 }
 
