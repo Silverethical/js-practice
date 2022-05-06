@@ -96,7 +96,6 @@ let school = {
 
 function calcSchool(objectName) {
   let result = {
-    fullName: "",
     grade: 0,
   };
   for (let i = 1; i <= Object.keys(objectName).length; i++) {
@@ -116,3 +115,36 @@ function calcSchool(objectName) {
 }
 
 calcSchool(school);
+
+
+
+
+/*
+function calcSchool(objectName) {
+  let result = {};
+  let x = 0;
+  for (let i = 1; i <= Object.keys(objectName).length; i++) {
+    for (let j = 1; j <= Object.keys(objectName["class" + i]).length; j++) {
+      if (objectName["class" + i]["student" + j].grade > x) {
+        x = objectName["class" + i]["student" + j].grade;
+        result["class" + i] = {
+          fullName: objectName["class" + i]["student" + j].fullName,
+          grade: objectName["class" + i]["student" + j].grade,
+        };
+      }
+    }
+    x = 0;
+  }
+  return result;
+}
+
+for (let i = 1; i <= Object.keys(calcSchool(school)).length; i++) {
+  console.log(
+    "Top Grade in Class " + i,
+    "is:",
+    calcSchool(school)["class" + i].grade,
+    "\nEarned by:",
+    calcSchool(school)["class" + i].fullName
+  );
+}
+*/
