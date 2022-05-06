@@ -79,3 +79,8 @@ body {
     padding: 14px 10px;
     border-radius: 8px;
 }
+
+#projects > a:first-of-type {
+    color: #6d81cc;
+    background-color: rgb(220 216 216);
+}
