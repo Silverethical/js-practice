@@ -94,6 +94,37 @@ let school = {
   },
 };
 
+// Final Attempt
+function calcSchool(objectName) {
+  let result = {};
+  for (let i = 1; i <= Object.keys(objectName).length; i++) {
+    result["class" + i] = { grade: 0 };
+    for (let j = 1; j <= Object.keys(objectName["class" + i]).length; j++) {
+      if (
+        objectName["class" + i]["student" + j].grade > result["class" + i].grade
+      ) {
+        result["class" + i].grade =
+          objectName["class" + i]["student" + j].grade;
+        result["class" + i] = {
+          fullName: objectName["class" + i]["student" + j].fullName,
+          grade: objectName["class" + i]["student" + j].grade,
+        };
+      }
+    }
+    console.log(
+      "Top Grade in Class " + i,
+      "is:",
+      result["class" + i].grade,
+      "\nEarned by:",
+      result["class" + i].fullName
+    );
+  }
+  return result;
+}
+
+console.log(calcSchool(school));
+
+/* First Attempt
 function calcSchool(objectName) {
   let result = {
     grade: 0,
@@ -115,36 +146,4 @@ function calcSchool(objectName) {
 }
 
 calcSchool(school);
-
-
-
-
-/*
-function calcSchool(objectName) {
-  let result = {};
-  let x = 0;
-  for (let i = 1; i <= Object.keys(objectName).length; i++) {
-    for (let j = 1; j <= Object.keys(objectName["class" + i]).length; j++) {
-      if (objectName["class" + i]["student" + j].grade > x) {
-        x = objectName["class" + i]["student" + j].grade;
-        result["class" + i] = {
-          fullName: objectName["class" + i]["student" + j].fullName,
-          grade: objectName["class" + i]["student" + j].grade,
-        };
-      }
-    }
-    x = 0;
-  }
-  return result;
-}
-
-for (let i = 1; i <= Object.keys(calcSchool(school)).length; i++) {
-  console.log(
-    "Top Grade in Class " + i,
-    "is:",
-    calcSchool(school)["class" + i].grade,
-    "\nEarned by:",
-    calcSchool(school)["class" + i].fullName
-  );
-}
 */
