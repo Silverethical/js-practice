@@ -103,8 +103,6 @@ function calcSchool(objectName) {
       if (
         objectName["class" + i]["student" + j].grade > result["class" + i].grade
       ) {
-        result["class" + i].grade =
-          objectName["class" + i]["student" + j].grade;
         result["class" + i] = {
           fullName: objectName["class" + i]["student" + j].fullName,
           grade: objectName["class" + i]["student" + j].grade,
