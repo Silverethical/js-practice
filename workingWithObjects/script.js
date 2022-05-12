@@ -127,7 +127,9 @@ Earned by: ${result["class" + i].fullName}`
 
 console.log(calcTopSchool(mySchool));
 
-/* First Attempt
+
+/* 
+// First Attempt
 function calcSchool(objectName) {
   let result = {
     grade: 0,
