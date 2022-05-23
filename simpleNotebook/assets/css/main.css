@@ -1,0 +1,168 @@
+/* General CSS */
+
+/* adding Persian font */
+@font-face {
+  font-family: "IranYekanWeb";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/iranyekanweblight.woff") format("woff");
+}
+@font-face {
+  font-family: "IranYekanWeb";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/iranyekanwebregular.woff") format("woff");
+}
+@font-face {
+  font-family: "IranYekanWeb";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/iranyekanwebbold.woff") format("woff");
+}
+
+/* some colors that I stole from somewhere */
+:root {
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #eee;
+  --gray-dark: #727475;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #1c1e1f;
+}
+
+/* making things the way they are supposed to be */
+* {
+  color: inherit;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+ul > li {
+  display: inline-block;
+}
+
+body {
+  font: normal 400 18px "IranYekanWeb", sans-serif;
+  line-height: 20px;
+  padding-top: 30px;
+  color: var(--dark);
+  background-color: var(--light);
+}
+
+p {
+  word-wrap: break-word;
+}
+
+a {
+  transition: all 0.5s ease-in-out;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  border: solid 1px var(--purple);
+  border-radius: 10px;
+}
+
+/* to seperate sections easier */
+.seperator {
+  height: 24px;
+}
+
+/* Section 1: title */
+#title {
+  text-align: center;
+}
+
+#title > h1 {
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 60px;
+}
+
+/* Section 2: input-text */
+#input-text > textarea {
+  font-family: inherit;
+  background-color: var(--light);
+  border: solid 1px var(--purple);
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  min-width: 30%;
+  max-width: 100%;
+}
+
+#input-text > div > a {
+  display: block;
+  color: var(--light);
+  background-color: var(--purple);
+  padding: 12px;
+  border-radius: 100px;
+  text-align: center;
+}
+
+#input-text > div > a:hover {
+  background-color: var(--blue);
+  font-size: calc(100% + 4px);
+  padding: 18px;
+}
+
+
+/* Section 3: storage */
+#storage > div:first-of-type > h2 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 40px;
+}
+
+#storage > .notes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  border: solid 1px var(--purple);
+  border-radius: 100px;
+  padding: 10px 20px;
+}
+
+/* the div that contains the DELETE button */
+#storage > .notes > div:last-of-type {
+  margin-right: 20px;
+}
+
+#storage > .notes > div > a {
+  font-size: 20px;
+  color: var(--danger);
+  background-color: var(--light);
+  border: dashed 2px var(--light);
+  padding: 2px 10px;
+  border-radius: 50%;
+  visibility: hidden;
+  opacity: 0;
+}
+
+#storage > .notes:hover > div > a {
+  visibility: visible;
+  opacity: 1;
+}
+
+#storage > .notes > div > a:hover {
+  border: dashed 2px var(--danger);
+}
