@@ -66,11 +66,6 @@ p {
   word-wrap: break-word;
 }
 
-a {
-  transition: all 0.5s ease-in-out;
-  text-decoration: none;
-}
-
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -96,7 +91,7 @@ a {
 }
 
 /* Section 2: input-text */
-#input-text > textarea {
+#input-form textarea {
   font-family: inherit;
   background-color: var(--light);
   border: solid 1px var(--purple);
@@ -108,24 +103,27 @@ a {
   max-width: 100%;
 }
 
-#input-text > div > a {
-  display: block;
+#input-form #submit-btn {
+  font-size: 24px;
   color: var(--light);
   background-color: var(--purple);
-  padding: 12px;
+  width: 100%;
+  padding: 8px 0;
   border-radius: 100px;
-  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  transition: all 0.5s ease-in-out;
 }
 
-#input-text > div > a:hover {
+#input-form #submit-btn:hover {
   background-color: var(--blue);
-  font-size: calc(100% + 4px);
-  padding: 18px;
+  font-size: calc(100% + 10px);
+  padding: 10px 0;
 }
-
 
 /* Section 3: storage */
-#storage > div:first-of-type > h2 {
+#storage > h2 {
   text-align: center;
   font-size: 28px;
   font-weight: 500;
@@ -147,7 +145,8 @@ a {
   margin-right: 20px;
 }
 
-#storage > .notes > div > a {
+#storage > .notes .remove-btn {
+  cursor: pointer;
   font-size: 20px;
   color: var(--danger);
   background-color: var(--light);
@@ -156,13 +155,15 @@ a {
   border-radius: 50%;
   visibility: hidden;
   opacity: 0;
+  text-decoration: none;
+  transition: all 0.5s ease-in-out;
 }
 
-#storage > .notes:hover > div > a {
+#storage > .notes:hover .remove-btn {
   visibility: visible;
   opacity: 1;
 }
 
-#storage > .notes > div > a:hover {
+#storage > .notes .remove-btn:hover {
   border: dashed 2px var(--danger);
 }
