@@ -6,7 +6,10 @@ let htmlInputForm = document.querySelector("#input-form"),
 let notesArray = [];
 
 // check if there are notes from before
-if (!!localStorage.getItem("notes")) {
+if (
+  !!localStorage.getItem("notes") &&
+  JSON.parse(localStorage.getItem("notes")).length > 0
+) {
   notesArray = JSON.parse(localStorage.getItem("notes"));
 
   for (let i = 0; i < notesArray.length; i++) {
