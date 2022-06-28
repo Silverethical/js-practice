@@ -36,9 +36,10 @@ function addNoteToPage(noteText) {
   const newNoteContainer = document.createElement("div");
   newNoteContainer.classList.add("notes");
   let htmlNotesDiv = document.querySelectorAll(".notes");
-  newNoteContainer.setAttribute("id", htmlNotesDiv.length + 1);
+  newNoteContainer.setAttribute("id", htmlNotesDiv.length);
   newNoteContainer.appendChild(newNoteDiv);
   newNoteContainer.appendChild(newRemoveBtn);
+  newNoteContainer.addEventListener("click", selectNote);
 
   // add the container to the page
   htmlNoteList.appendChild(newNoteContainer);
@@ -65,14 +66,12 @@ function addNewNote(e) {
   }
 }
 
-function removeNote(e) {
-  // clicked note's index in notesArray
-  let noteIndex = e.path[1].id - 1;
+function removeNote(target = this, targetParent = this.parentElement) {
   // remove note from array
-  notesArray.splice(noteIndex, 1);
+  notesArray.splice(targetParent.id, 1);
 
   // remove note from page
-  e.path[1].remove();
+  targetParent.remove();
 
   // adjust LocalStorage
   localStorage.setItem("notes", JSON.stringify(notesArray));
@@ -80,9 +79,25 @@ function removeNote(e) {
   // adjust id of .notes
   let htmlNotesDiv = document.querySelectorAll(".notes");
   for (let i = 0; i < htmlNotesDiv.length; i++) {
-    htmlNotesDiv[i].setAttribute("id", i + 1);
+    htmlNotesDiv[i].setAttribute("id", i);
   }
 }
 
 // Event Listeners
 htmlInputForm.addEventListener("submit", addNewNote);
+
+let selectedNote;
+function selectNote() {
+  if (!!selectedNote) {
+    selectedNote.classList.remove("focus");
+  }
+  selectedNote = this;
+  selectedNote.classList.toggle("focus");
+  document.addEventListener("keydown", keyLogger);
+}
+
+function keyLogger(e) {
+  if (e.code == "Backspace" || e.code == "Delete") {
+    removeNote(selectedNote, selectedNote);
+  }
+}

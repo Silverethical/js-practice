@@ -167,3 +167,7 @@ p {
 #storage > .notes .remove-btn:hover {
   border: dashed 2px var(--danger);
 }
+
+.focus {
+  border: 3px solid red !important;
+}
