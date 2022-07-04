@@ -1,0 +1,134 @@
+/* General CSS */
+
+/* adding Persian font */
+@font-face {
+  font-family: "IranYekanWeb";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/iranyekanweblight.woff") format("woff");
+}
+@font-face {
+  font-family: "IranYekanWeb";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/iranyekanwebregular.woff") format("woff");
+}
+@font-face {
+  font-family: "IranYekanWeb";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/iranyekanwebbold.woff") format("woff");
+}
+
+/* some colors that I stole from somewhere */
+:root {
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #eee;
+  --gray-dark: #727475;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #1c1e1f;
+}
+
+/* making things the way they are supposed to be */
+* {
+  color: inherit;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+ul > li {
+  display: inline-block;
+}
+
+body {
+  font: normal 400 18px "IranYekanWeb", sans-serif;
+  line-height: 20px;
+  padding-top: 30px;
+  color: var(--dark);
+  background-color: var(--light);
+}
+
+p {
+  word-wrap: break-word;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  border: solid 1px var(--purple);
+  border-radius: 10px;
+  padding-bottom: 70px;
+}
+
+/* to seperate sections easier */
+.seperator {
+  height: 24px;
+}
+
+/* Section 1: title */
+#title {
+  text-align: center;
+}
+
+#title > h1 {
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 60px;
+}
+
+/* Section 2: input-text */
+#form-section {
+  text-align: center;
+  font-size: 30px;
+}
+
+#input-form input {
+  vertical-align: middle;
+  font-family: inherit;
+  background-color: var(--light);
+  border: solid 1px var(--purple);
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 16px;
+  max-width: 25%;
+}
+
+#input-form #submit-btn {
+  font-size: 22px;
+  color: var(--light);
+  background-color: var(--purple);
+  width: 100%;
+  padding: 15px;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  transition: all 0.5s ease-in-out;
+}
+
+#input-form #submit-btn:hover {
+  background-color: var(--blue);
+  padding: 10px;
+}
+
+.result {
+  font-size: 22px;
+  border: solid 1px var(--purple);
+  border-radius: 10px;
+  padding: 10px 20px;
+  text-align: center;
+}
