@@ -66,7 +66,7 @@ function addNewNote(e) {
   }
 }
 
-function removeNote(target = this, targetParent = this.parentElement) {
+function removeNote(e, targetParent = this.parentElement) {
   // remove note from array
   notesArray.splice(targetParent.id, 1);
 
