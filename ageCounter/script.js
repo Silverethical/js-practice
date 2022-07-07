@@ -5,29 +5,26 @@ let htmlBirthDay = document.querySelector("#birth-day"),
   htmlBirthMonth = document.querySelector("#birth-month"),
   htmlBirthYear = document.querySelector("#birth-year"),
   htmlSubmitBtn = document.querySelector("#submit-btn"),
-  htmlResultSection = document.querySelector("#result-section");
+  htmlResultSection = document.querySelector("#result-section"),
+  htmlResultDiv = htmlResultSection.querySelector("#result-section > div");
 
 // event listeners
 htmlSubmitBtn.addEventListener("click", calcAge);
 
-function createResult(pText) {
-  if (!!htmlResultSection.querySelector(".result")) {
-    htmlResultSection.querySelector(".result").remove();
+function printResult(pText) {
+  if (!htmlResultDiv.classList.contains("result")) {
+    htmlResultDiv.classList.add("result");
   }
+  let resultP = htmlResultDiv.querySelector("p"),
+    resultH3 = htmlResultDiv.querySelector("h3");
 
-  const newDiv = document.createElement("div");
-  newDiv.classList.add("result");
-  let newP = document.createElement("p");
-  newP.appendChild(document.createTextNode(pText));
-  let newH3 = document.createElement("h3");
-  newH3.textContent = "سن شما:";
-  newDiv.appendChild(newH3);
-  newDiv.appendChild(newP);
-
-  htmlResultSection.appendChild(newDiv);
+  resultP.textContent = pText;
+  resultH3.textContent = "سن شما:";
 }
 
-function calcAge() {
+function calcAge(e) {
+  e.preventDefault();
+
   if (!htmlBirthYear.value || !htmlBirthMonth.value || !htmlBirthDay.value) {
     alert("لطفا همه باکس ها را پر کنید");
   } else {
@@ -52,15 +49,14 @@ function calcAge() {
       seconds: userAge.getSeconds(),
     };
 
-    
     let finalResult = `${finalUserAge.years} سال
     ${finalUserAge.months} ماه
     ${finalUserAge.days} روز
     ${finalUserAge.hours} ساعت
     ${finalUserAge.minutes} دقیقه
     و ${finalUserAge.seconds} ثانیه`;
-    
-    console.log(finalUserAge);
-    createResult(finalResult);
+
+    // console.log(finalUserAge);
+    printResult(finalResult);
   }
 }
