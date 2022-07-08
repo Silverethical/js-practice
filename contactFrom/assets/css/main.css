@@ -1,0 +1,54 @@
+body {
+  background: -webkit-linear-gradient(left, #0072ff, #00c6ff);
+}
+
+#form-container {
+  padding: 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border-radius: 20px;
+  max-width: 50%;
+  margin: 4% auto 0;
+  box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, 0.3);
+}
+
+#form-container .inputs,
+#form-container textarea,
+#form-container #submit-btn {
+  margin-bottom: 20px;
+  border: none;
+  outline: none;
+  background-color: rgb(251, 251, 251);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  display: block;
+  padding: 10px 20px;
+  font-size: 15px;
+  transition-property: all;
+  transition-delay: 0.05s;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in;
+}
+
+#form-container .inputs {
+  width: 299px;
+}
+
+#form-container textarea {
+  max-width: 300px;
+}
+
+#form-container #submit-btn {
+  cursor: pointer;
+  width: 100%;
+}
+
+#form-container .inputs:hover,
+#form-container .inputs:focus,
+#form-container textarea:hover,
+#form-container textarea:focus,
+#form-container #submit-btn:hover {
+  box-shadow: 0px 0px 10px 0px #0073ff67 !important;
+}
