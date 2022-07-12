@@ -8,18 +8,51 @@
     <link rel="stylesheet" href="./assets/css/main.css" />
   </head>
   <body>
-    <div id="form-container">
-      <div>
-        <img src="./assets/image/img-01.png" alt="mail" />
-      </div>
-      <div>
-        <form action="#">
-            <input id="name" class="inputs" name="name" type="text" placeholder="name">
-            <input id="email" class="inputs" name="email" type="text" placeholder="email">
-            <input id="subject" class="inputs" name="subject" type="text" placeholder="subject">
-            <textarea id="message" name="message" placeholder="message" cols="100" rows="10"></textarea>
-            <input id="submit-btn" type="submit" name="submit" value="Send">
-        </form>
+    <div class="container">
+      <div id="form-container">
+        <div>
+          <img src="./assets/image/img-01.png" alt="mail" />
+        </div>
+        <div>
+          <form id="contact-form" action="#">
+            <input
+              id="name"
+              class="inputs"
+              name="name"
+              type="name"
+              placeholder="name"
+            />
+            <input
+              id="email"
+              class="inputs"
+              name="email"
+              type="email"
+              placeholder="email"
+            />
+            <input
+              id="subject"
+              class="inputs"
+              name="subject"
+              type="text"
+              placeholder="subject"
+            />
+            <textarea
+              id="message"
+              name="message"
+              placeholder="message"
+              cols="100"
+              rows="10"
+            ></textarea>
+            <div id="buttons-div">
+              <input id="submit-btn" type="submit" name="submit" value="Send" />
+              <button id="reset-btn">Reset</button>
+            </div>
+          </form>
+          <div id="loading-div" class="hidden">
+            <p>wait..</p>
+            <img src="./assets/gif/loading.gif" alt="loading" />
+          </div>
+        </div>
       </div>
     </div>
 
