@@ -17,7 +17,7 @@ nameField.addEventListener("blur", validateField);
 emailField.addEventListener("blur", validateField);
 subjectField.addEventListener("blur", validateField);
 messageField.addEventListener("blur", validateField);
-contactForm.addEventListener("submit", submitAction);
+submitBtn.addEventListener("click", submitAction);
 resetBtn.addEventListener("click", resetContactForm);
 
 // functions
@@ -83,8 +83,9 @@ function submitAction(e) {
 }
 
 function resetContactForm() {
-  contactForm.reset();
   hideLoading();
+  contactForm.reset();
+  appInit();
 }
 
 function showLoading() {
