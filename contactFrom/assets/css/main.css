@@ -79,6 +79,7 @@ body {
   width: 25%;
   color: #fff;
   background-color: transparent;
+  box-shadow: none;
   padding-left: 15px;
 }
 
