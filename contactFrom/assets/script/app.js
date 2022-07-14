@@ -49,9 +49,9 @@ function isNotEmpty(field) {
 
 // check email contains @
 function validateEmail(field) {
-  const emailValue = emailField.value,
+  const emailAddress = emailField.value,
     regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-  if (emailValue.match(regexEmail)) {
+  if (emailAddress.match(regexEmail)) {
     field.style = "box-shadow: 0px 0px 10px 0px #04953967 !important";
     field.classList.add("success");
   } else {
