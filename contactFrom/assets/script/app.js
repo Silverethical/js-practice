@@ -13,11 +13,11 @@ const contactForm = document.querySelector("#contact-form"),
 
 // eventListeners
 document.addEventListener("DOMContentLoaded", appInit);
-nameField.addEventListener("blur", validateField);
-emailField.addEventListener("blur", validateField);
-subjectField.addEventListener("blur", validateField);
-messageField.addEventListener("blur", validateField);
-submitBtn.addEventListener("click", submitAction);
+nameField.addEventListener("keyup", validateField);
+emailField.addEventListener("keyup", validateField);
+subjectField.addEventListener("keyup", validateField);
+messageField.addEventListener("keyup", validateField);
+contactForm.addEventListener("submit", submitAction);
 resetBtn.addEventListener("click", resetContactForm);
 
 // functions
@@ -75,12 +75,8 @@ function submitAction(e) {
   //show loading
   showLoading();
 
-  //wait 3 seconds
-  delay(function () {
-    //reset
-    resetContactForm();
-    // window.location.reload();
-  }, 3000);
+  //wait 3 seconds then reset the form
+  setTimeout(resetContactForm, 3000);
 }
 
 function resetContactForm() {
@@ -98,11 +94,3 @@ function hideLoading() {
   loadingDiv.classList.add("hidden");
   contactForm.classList.remove("hidden");
 }
-
-let delay = (function () {
-  let timer = 0;
-  return function (callback, ms) {
-    clearTimeout(timer);
-    timer = setTimeout(callback, ms);
-  };
-})();
