@@ -19,7 +19,7 @@ emailField.addEventListener("keyup", validateField);
 subjectField.addEventListener("keyup", validateField);
 messageField.addEventListener("keyup", validateField);
 contactForm.addEventListener("submit", submitAction);
-resetBtn.addEventListener("click", resetContactForm);
+contactForm.addEventListener("reset", resetContactForm);
 
 // functions
 function appInit() {
