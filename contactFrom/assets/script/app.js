@@ -9,7 +9,8 @@ const contactForm = document.querySelector("#contact-form"),
   buttonsDiv = document.querySelector("#buttons-div"),
   submitBtn = document.querySelector("#submit-btn"),
   resetBtn = document.querySelector("#reset-btn"),
-  loadingDiv = document.querySelector("#loading-div");
+  loadingDiv = document.querySelector("#loading-div"),
+  doneDiv = document.querySelector("#done-div");
 
 // eventListeners
 document.addEventListener("DOMContentLoaded", appInit);
@@ -23,6 +24,10 @@ resetBtn.addEventListener("click", resetContactForm);
 // functions
 function appInit() {
   submitBtn.disabled = true;
+
+  for (let i = 0; i < contactForm.children.length; i++) {
+    contactForm.children[i].classList.remove("success");
+  }
 }
 
 // validate fields
@@ -39,11 +44,9 @@ function validateField() {
 // check fields are not empty
 function isNotEmpty(field) {
   if (!!field.value) {
-    field.style = "box-shadow: 0px 0px 10px 0px #04953967 !important";
-    field.classList.add("success");
+    validateSuccess(field);
   } else {
-    field.style = "box-shadow: 0px 0px 10px 0px #ff0d0067";
-    field.classList.remove("success");
+    validateFailed(field);
   }
 }
 
@@ -52,11 +55,9 @@ function validateEmail(field) {
   const emailAddress = emailField.value,
     regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   if (emailAddress.match(regexEmail)) {
-    field.style = "box-shadow: 0px 0px 10px 0px #04953967 !important";
-    field.classList.add("success");
+    validateSuccess(field);
   } else {
-    field.style = "box-shadow: 0px 0px 10px 0px #ff0d0067";
-    field.classList.remove("success");
+    validateFailed(field);
   }
 }
 
@@ -72,25 +73,60 @@ function activeBtn() {
 function submitAction(e) {
   e.preventDefault();
 
+  //hide form
+  hideContactForm();
+
   //show loading
   showLoading();
 
-  //wait 3 seconds then reset the form
-  setTimeout(resetContactForm, 3000);
+  //after 2 seconds hide loading and show done
+  setTimeout(function () {
+    hideLoading();
+    showDone();
+  }, 2000);
+
+  //after 4 seconds reset the form
+  setTimeout(resetContactForm, 5000);
 }
 
 function resetContactForm() {
+  showContactForm();
   hideLoading();
+  hideDone();
   contactForm.reset();
   appInit();
 }
 
-function showLoading() {
+function validateSuccess(field) {
+  field.classList.remove("failed");
+  field.classList.add("success");
+}
+
+function validateFailed(field) {
+  field.classList.remove("success");
+  field.classList.add("failed");
+}
+
+function showContactForm() {
+  contactForm.classList.remove("hidden");
+}
+
+function hideContactForm() {
   contactForm.classList.add("hidden");
+}
+
+function showLoading() {
   loadingDiv.classList.remove("hidden");
 }
 
 function hideLoading() {
   loadingDiv.classList.add("hidden");
-  contactForm.classList.remove("hidden");
+}
+
+function showDone() {
+  doneDiv.classList.remove("hidden");
+}
+
+function hideDone() {
+  doneDiv.classList.add("hidden");
 }
