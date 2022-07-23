@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>simpleInsurance</title>
+    <link rel="stylesheet" href="./assets/css/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="form-div">
+        <h1>محاسبه آنلاین قیمت بیمه خوردو</h1>
+        <form action="#">
+          <label for="cars">مدل خودرو:</label>
+          <select name="cars" id="cars">
+            <option value="camaro-ss">کامارو اس اس</option>
+            <option value="ford-mustang">فورد ماستنگ</option>
+            <option value="dodge-demon">داج دیمِن</option>
+          </select>
+          <br /><br />
+
+          <label for="car-year">سال ساخت:</label>
+          <select name="car-year" id="car-year">
+            <option value="2022">2022</option>
+            <option value="2021">2021</option>
+            <option value="2020">2020</option>
+          </select>
+          <br /><br />
+          <div id="insurance-plan-div">
+            <p>نوع بیمه:</p>
+            <input
+              type="radio"
+              id="simple-plan"
+              name="insurance-plan"
+              value="simple-plan"
+            />
+            <label for="simple-plan">ساده - شخص ثالث</label>
+            <br />
+            <input
+              type="radio"
+              id="full-plan"
+              name="insurance-plan"
+              value="full-plan"
+            />
+            <label for="full-plan">کامل - شخص ثالث با بدنه</label>
+          </div>
+          <br />
+          <input id="submit-btn" type="submit" value="محاسبه قیمت" />
+        </form>
+      </div>
+      <div id="result-div">
+        <h2>خلاصه فاکتور</h2>
+        <p>مدل ماشین: </p>
+        <p>سال ساخت: </p>
+        <p>قیمت نهایی: </p>
+      </div>
+
+      <footer></footer>
+    </div>
+    <script src="./assets/script/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+body {
+  /* background: -webkit-linear-gradient(left, #0072ff, #00c6ff); */
+  /* box-shadow: 0px 0px 20px 3px #0073ff67; */
+  /* background-image: url("../image/bg_hero_1.svg");
+  background-size: cover; */
+  margin: 0;
+  background-color: #ffbb0097;
+  font-size: 18px;
+}
+
+.container {
+  margin-top: -21px;
+  text-align: center;
+  min-height: 800px;
+}
+
+#form-div {
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  background-color: #0073ffc3;
+  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.45);
+  color: #fdd35e;
+  padding: 100px 0;
+}
+
+#form-div select,
+#submit-btn {
+  font-size: 18px;
+  background-color: #ffd45d;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.2);
+
+  transition: all 0.5s ease-out;
+}
+
+#form-div select:hover,
+#submit-btn:hover {
+  color: #ffd45d;
+  background-color: rgba(0, 0, 0, 0.75) !important;
+}
+
+#form-div #insurance-plan-div {
+  display: inline-block;
+  margin-bottom: 20px;
+  background-color: transparent;
+  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#form-div #insurance-plan-div p {
+  margin: 0 0 10px;
+}
+
+#result-div {
+  display: inline-block;
+  margin: 30px 0 80px;
+  padding: 20px 200px;
+  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.1);
+  border-top-left-radius: 50%;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 50%;
+}
+
+footer {
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  width:100%;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  background-color: #0073ffc3;
+  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.45);
+  color: #fdd35e;
+  min-height: 50px;
+
+}
