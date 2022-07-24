@@ -9,23 +9,19 @@
   </head>
   <body>
     <div class="container">
-      <div id="form-div">
+      <div id="form-div" class="dodge-demon">
         <h1>محاسبه آنلاین قیمت بیمه خوردو</h1>
         <form action="#">
           <label for="cars">مدل خودرو:</label>
-          <select name="cars" id="cars">
-            <option value="camaro-ss">کامارو اس اس</option>
-            <option value="ford-mustang">فورد ماستنگ</option>
+          <select name="cars" id="select-car-model">
             <option value="dodge-demon">داج دیمِن</option>
+            <option value="ford-mustang">فورد ماستنگ</option>
+            <option value="camaro-ss">کامارو اس اس</option>
           </select>
           <br /><br />
 
           <label for="car-year">سال ساخت:</label>
-          <select name="car-year" id="car-year">
-            <option value="2022">2022</option>
-            <option value="2021">2021</option>
-            <option value="2020">2020</option>
-          </select>
+          <select name="car-year" id="select-car-year"></select>
           <br /><br />
           <div id="insurance-plan-div">
             <p>نوع بیمه:</p>
@@ -51,9 +47,9 @@
       </div>
       <div id="result-div">
         <h2>خلاصه فاکتور</h2>
-        <p>مدل ماشین: </p>
-        <p>سال ساخت: </p>
-        <p>قیمت نهایی: </p>
+        <p>مدل ماشین:</p>
+        <p>سال ساخت:</p>
+        <p>قیمت نهایی:</p>
       </div>
 
       <footer></footer>
