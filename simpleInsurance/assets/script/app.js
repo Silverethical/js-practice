@@ -36,18 +36,3 @@ function generateYears(maxYear = getYearShamsi(), minYear = maxYear - 20) {
     }
   }
 }
-
-function NewCar(carModel, ratio) {
-  (this.carModel = carModel),
-    (this.ratio = ratio),
-    (calcPrice = function () {});
-}
-
-function newInsurancePlan(planName, planRatio) {
-  (this.planName = planName), (this.planRatio = planRatio);
-}
-
-let test = {
-  basicPlan: { ratio: 2 },
-  fullPlan: { ratio: 4 },
-};
