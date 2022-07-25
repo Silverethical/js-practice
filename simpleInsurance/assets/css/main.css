@@ -14,8 +14,7 @@ body {
 }
 
 #form-div {
-  border-bottom-right-radius: 50%;
-  border-bottom-left-radius: 50%;
+  border-radius: 0 0 50% 50%;
   background-color: #0073ffc3;
   box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.45);
   color: #fdd35e;
@@ -60,10 +59,7 @@ body {
   margin: 50px 0 80px;
   padding: 20px 200px;
   box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.15);
-  border-top-left-radius: 50%;
-  border-top-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 50%;
+  border-radius: 100px 10px;
 }
 
 footer {
@@ -71,8 +67,7 @@ footer {
   left: 0px;
   bottom: 0px;
   width: 100%;
-  border-top-right-radius: 100px;
-  border-top-left-radius: 100px;
+  border-radius: 100px 100px 0 0;
   color: white;
   background-color: #0073ffc3;
   box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.45);
