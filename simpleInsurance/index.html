@@ -8,58 +8,71 @@
     <link rel="stylesheet" href="./assets/css/main.css" />
   </head>
   <body>
-    <div class="container">
-      <div id="form-div" class="dodge-demon">
-        <h1>محاسبه آنلاین قیمت بیمه خوردو</h1>
-        <form action="#">
-          <label for="cars">مدل خودرو:</label>
-          <select name="cars" id="select-car-model">
-            <option value="dodge-demon">داج دیمِن</option>
-            <option value="camaro-ss">کامارو اس اس</option>
-            <option value="ford-mustang">فورد ماستنگ</option>
-          </select>
-          <br /><br />
+    <div class="seperator"></div>
 
-          <label for="car-year">سال ساخت:</label>
-          <select name="car-year" id="select-car-year"></select>
-          <br /><br />
-          <div id="insurance-plan-div">
-            <p>نوع بیمه:</p>
-            <input
-              type="radio"
-              id="basic-plan"
-              name="insurance-plan"
-              value="basic-plan"
-            />
-            <label for="basic-plan">ساده - شخص ثالث</label>
-            <br />
-            <input
-              type="radio"
-              id="full-plan"
-              name="insurance-plan"
-              value="full-plan"
-            />
-            <label for="full-plan">کامل - شخص ثالث با بدنه</label>
-          </div>
+    <div id="form-div">
+      <h1>محاسبه آنلاین قیمت بیمه خوردو</h1>
+      <form>
+        <div class="segment"></div>
+        <!-- car model -->
+        <label for="cars">مدل خودرو:</label>
+        <select class="dropdown" name="cars" id="select-car-model">
+          <option value="dodge-demon">داج دیمِن</option>
+          <option value="camaro-ss">کامارو اس اس</option>
+          <option value="ford-mustang">فورد ماستنگ</option>
+        </select>
+        <br /><br />
+
+        <!-- car year -->
+        <label for="car-year">سال ساخت:</label>
+        <select class="dropdown" name="car-year" id="select-car-year"></select>
+        <br /><br />
+
+        <!-- insurance plan -->
+        <div id="insurance-plan-div">
+          <p>نوع بیمه:</p>
+          <input
+            type="radio"
+            id="basic-plan"
+            name="insurance-plan"
+            value="basic-plan"
+          />
+          <label for="basic-plan">ساده - شخص ثالث</label>
           <br />
-          <input id="submit-btn" type="submit" value="محاسبه قیمت" />
-        </form>
-      </div>
-      <div id="result-div">
-        <h2>خلاصه فاکتور</h2>
-        <p>مدل ماشین:</p>
-        <p>سال ساخت:</p>
-        <p>قیمت نهایی:</p>
-      </div>
+          <input
+            type="radio"
+            id="full-plan"
+            name="insurance-plan"
+            value="full-plan"
+          />
+          <label for="full-plan">کامل - شخص ثالث با بدنه</label>
+        </div>
+        <br />
+        <button class="red" type="button">
+          <i class="icon"></i> محاسبه قیمت
+        </button>
+      </form>
 
-      <footer>
-        <a
-          target="_blank"
-          href="https://static1.cbrimages.com/wordpress/wp-content/uploads/2022/03/Reiner.png"
-          >たすけて</a
-        >
-      </footer>
+      <!-- <div class="segment">
+        <button class="unit" type="button">
+          <i class="icon"></i>
+        </button>
+        <button class="unit" type="button">
+          <i class="icon"></i>
+        </button>
+        <button class="unit" type="button">
+          <i class="icon"></i>
+        </button>
+      </div> -->
     </div>
+
+    <div id="result-div" class="segment">
+      <h2>خلاصه فاکتور</h2>
+      <p>مدل ماشین:</p>
+      <p>سال ساخت:</p>
+      <p>قیمت نهایی:</p>
+    </div>
+
     <script src="./assets/script/app.js"></script>
   </body>
 </html>

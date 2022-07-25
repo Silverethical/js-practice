@@ -1,82 +1,145 @@
-body {
-  margin: 0;
-  background-color: #ffbb0097;
-  font-size: 18px;
+/* adding Persian font */
+@font-face {
+  font-family: "IranYekanWeb";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/iranyekanweblight.woff") format("woff");
+}
+@font-face {
+  font-family: "IranYekanWeb";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/iranyekanwebregular.woff") format("woff");
+}
+@font-face {
+  font-family: "IranYekanWeb";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/iranyekanwebbold.woff") format("woff");
+}
+
+.seperator {
+  height: 60px;
 }
 
 .hidden {
   display: none !important;
 }
 
-.container {
-  margin-top: -21px;
+body,
+html {
+  background-color: #ebecf0;
+}
+
+body,
+p,
+input,
+select,
+textarea,
+button {
+  font-family: "IranYekanWeb", sans-serif;
+  letter-spacing: -0.2px;
+  font-size: 16px;
+}
+
+div,
+p {
+  color: #9c9faa;
+  text-shadow: 1px 1px 1px #fff;
+}
+
+h1 {
   text-align: center;
 }
 
-#form-div {
-  border-radius: 0 0 50% 50%;
-  background-color: #0073ffc3;
-  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.45);
-  color: #fdd35e;
-  padding: 50px 0;
+form {
+  /* padding: 16px; */
+  width: 320px;
+  margin: 0 auto;
 }
 
-#form-div select,
-#submit-btn {
-  font-size: 18px;
-  background-color: #ffd45d;
-  border: none;
-  outline: none;
-  border-radius: 5px;
-  padding: 10px;
+.segment {
+  padding: 22px 0;
+  text-align: center;
+}
+
+button,
+input,
+.dropdown {
+  border: 0;
+  outline: 0;
+  font-size: 16px;
+  border-radius: 320px;
+  padding: 16px;
+  background-color: #ebecf0;
+  text-shadow: 1px 1px 0 #fff;
+}
+
+label {
+  /* display: block; */
+  /* width: 100%; */
+  margin-left: 20px;
+}
+
+input {
+  /* box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF; */
+  /* width: 100%; */
+  /* appearance: none; */
+  /* -webkit-appearance: none; */
+  margin-left: 8px;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+}
+/* input:focus {
+  box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+} */
+
+.dropdown {
+  min-width: 45%;
+}
+
+button,
+.dropdown {
+  color: #61677c;
+  font-weight: bold;
+  box-shadow: -5px -5px 20px #fff, 5px 5px 20px #babecc;
+  transition: all 0.2s ease-in-out;
   cursor: pointer;
-  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.2);
-
-  transition: all 0.5s ease-out;
+  font-weight: 600;
 }
-
-#form-div select:hover,
-#submit-btn:hover {
-  color: #ffd45d;
-  background-color: rgba(0, 0, 0, 0.75) !important;
+button:hover,
+.dropdown:hover {
+  box-shadow: -2px -2px 5px #fff, 2px 2px 5px #babecc;
 }
-
-#form-div #insurance-plan-div {
-  display: inline-block;
-  margin-bottom: 20px;
-  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  padding: 10px;
-  background-color: #00000082;
+button:active {
+  box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #fff;
 }
-
-#form-div #insurance-plan-div p {
-  margin: 0 0 10px;
+/* button .icon {
+  margin-left: 8px;
+} */
+button.unit {
+  border-radius: 8px;
+  line-height: 0;
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 8px;
+  font-size: 19.2px;
+}
+button.unit .icon {
+  margin-left: 0;
+}
+button.red {
+  display: block;
+  width: 100%;
+  color: #ae1100;
 }
 
 #result-div {
-  display: inline-block;
-  margin: 50px 0 80px;
-  padding: 20px 200px;
-  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.15);
-  border-radius: 100px 10px;
-}
-
-footer {
-  position: fixed;
-  left: 0px;
-  bottom: 0px;
-  width: 100%;
-  border-radius: 100px 100px 0 0;
-  color: white;
-  background-color: #0073ffc3;
-  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.45);
-  min-height: 20px;
-}
-
-footer a {
-  text-decoration: none;
-  color: white;
-  font-size: 12px;
-  line-height: 20px;
+  margin: 50px auto 0;
+  width: 320px;
+  border-radius: 50px;
+  box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #fff;
 }
