@@ -95,6 +95,7 @@ input {
 } */
 
 .dropdown {
+  text-align: center;
   min-width: 45%;
 }
 
