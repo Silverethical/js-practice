@@ -17,9 +17,9 @@
         <!-- car model -->
         <label for="cars">مدل خودرو:</label>
         <select class="dropdown" name="cars" id="select-car-model">
-          <option value="dodge-demon">داج دیمِن</option>
-          <option value="camaro-ss">کامارو اس اس</option>
-          <option value="ford-mustang">فورد ماستنگ</option>
+          <option value="dodge demon">Dodge Demon</option>
+          <option value="chevrolet camaro">Chevrolet Camaro</option>
+          <option value="ford mustang">Ford Mustang</option>
         </select>
         <br /><br />
 
@@ -31,24 +31,14 @@
         <!-- insurance plan -->
         <div id="insurance-plan-div">
           <p>نوع بیمه:</p>
-          <input
-            type="radio"
-            id="basic-plan"
-            name="insurance-plan"
-            value="basic-plan"
-          />
+          <input type="radio" name="insurance-plan" value="basic" />
           <label for="basic-plan">ساده - شخص ثالث</label>
           <br />
-          <input
-            type="radio"
-            id="full-plan"
-            name="insurance-plan"
-            value="full-plan"
-          />
+          <input type="radio" name="insurance-plan" value="full" />
           <label for="full-plan">کامل - شخص ثالث با بدنه</label>
         </div>
         <br />
-        <button class="red" type="button">
+        <button id="submit-btn" class="red" type="button">
           <i class="icon"></i> محاسبه قیمت
         </button>
       </form>
@@ -66,12 +56,13 @@
       </div> -->
     </div>
 
-    <div id="result-div" class="segment">
-      <h2>خلاصه فاکتور</h2>
-      <p>مدل ماشین:</p>
-      <p>سال ساخت:</p>
-      <p>قیمت نهایی:</p>
+    <div class="seperator"></div>
+
+    <div id="loading-div" class="hidden">
+      <img src="./assets/gif/loading.gif" alt="loading" />
     </div>
+
+    <div id="result-div" class="segment hidden"></div>
 
     <script src="./assets/script/app.js"></script>
   </body>

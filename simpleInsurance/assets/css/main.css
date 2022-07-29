@@ -44,7 +44,7 @@ button {
 
 div,
 p {
-  color: #9c9faa;
+  color: #7b7d85;
   text-shadow: 1px 1px 1px #fff;
 }
 
@@ -96,7 +96,7 @@ input {
 
 .dropdown {
   text-align: center;
-  min-width: 45%;
+  min-width: 175px;
 }
 
 button,
@@ -138,8 +138,12 @@ button.red {
   color: #ae1100;
 }
 
+#loading-div {
+  text-align: center;
+}
+
 #result-div {
-  margin: 50px auto 0;
+  margin: 0 auto;
   width: 320px;
   border-radius: 50px;
   box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #fff;
