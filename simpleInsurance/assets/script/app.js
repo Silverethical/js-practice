@@ -48,22 +48,19 @@ function generateYears(maxYear = getYearShamsi(), minYear = maxYear - 20) {
   }
 }
 
-let carsPriceRatio = {
-  NewCar: function (carMaker, carName, priceRatio) {
-    if (!this[carMaker]) {
-      this[carMaker] = {};
-    }
-    this[carMaker][carName] = priceRatio;
+let priceRatios = {
+  insurancePlans: {
+    basic: 1.4,
+    full: 2,
   },
-};
-
-carsPriceRatio.NewCar("dodge", "demon", 2);
-carsPriceRatio.NewCar("chevrolet", "camaro", 1.6);
-carsPriceRatio.NewCar("ford", "mustang", 1.3);
-
-const insurancePlans = {
-  basic: { priceRatio: 1.4 },
-  full: { priceRatio: 2 },
+  cars: {
+    NewCar: function (carMaker, carName, priceRatio) {
+      if (!this[carMaker]) {
+        this[carMaker] = {};
+      }
+      this[carMaker][carName] = priceRatio;
+    },
+  },
 };
 
 function calcPrice(carRatio, yearDifference, insuranceRatio) {
@@ -109,7 +106,7 @@ let userInputs = {
         // get the rest of the string
         (this.carModel = htmlCarType.replace(/.* /, "")),
         // get the car price ratio from the list
-        (this.carRatio = carsPriceRatio[this.carMaker][this.carModel]);
+        (this.carRatio = priceRatios.cars[this.carMaker][this.carModel]);
     }
 
     // get car year and diffrence from now
@@ -125,7 +122,7 @@ let userInputs = {
     ).value;
     if (!!insuranceType) {
       (this.insuranceType = insuranceType),
-        (this.insuranceRatio = insurancePlans[this.insuranceType].priceRatio);
+        (this.insuranceRatio = priceRatios.insurancePlans[this.insuranceType]);
     }
 
     // calculate the final price
@@ -136,3 +133,7 @@ let userInputs = {
     );
   },
 };
+
+priceRatios.cars.NewCar("dodge", "demon", 2);
+priceRatios.cars.NewCar("chevrolet", "camaro", 1.6);
+priceRatios.cars.NewCar("ford", "mustang", 1.3);
