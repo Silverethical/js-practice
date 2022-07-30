@@ -13,7 +13,12 @@ htmlSubmitBtn.addEventListener("click", function () {
   // wait 3 seconds and then proceed
   setTimeout(() => {
     hideLoading();
-    showResult(userInputs.carModel, userInputs.carYear, userInputs.finalPrice);
+    showResult(
+      userInputs.carModel,
+      userInputs.carYear,
+      userInputs.insuranceType,
+      userInputs.finalPrice
+    );
   }, 3000);
 });
 
@@ -82,13 +87,14 @@ function hideLoading() {
   htmlLoading.classList.add("hidden");
 }
 
-function showResult(carModel, carYear, finalPrice) {
+function showResult(carModel, carYear, insuranceType, finalPrice) {
   const htmlResult = document.querySelector("#result-div");
   htmlResult.classList.remove("hidden");
   htmlResult.innerHTML = `
   <h2>خلاصه فاکتور</h2>
   <p>مدل ماشین: ${carModel}</p>
   <p>سال ساخت: ${carYear}</p>
+  <p>نوع بیمه: ${insuranceType}</p>
   <p>قیمت نهایی: ${finalPrice}</p>`;
 }
 function hideResult() {
