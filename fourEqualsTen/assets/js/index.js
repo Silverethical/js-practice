@@ -150,8 +150,10 @@ function calculateSolutions(numbers, goal) {
         for (const calculation of calculationList) {
           /** if calculation equals the desired number */
           if (eval(calculation) === Number(goal)) {
-            /** push the calculation to the result array */
-            result.push(calculation);
+            /** check if calculation is not already in result */
+            if (!result.includes(calculation))
+              /** push the calculation to the result array */
+              result.push(calculation);
           }
         }
       }
@@ -170,7 +172,7 @@ function calculateSolutions(numbers, goal) {
     console.log("Total time taken : " + timeTaken + " milliseconds");
 
     /** print solutions in page */
-    printResult(result)
+    printResult(result);
   } catch (error) {
     /** log error */
     console.error(error);
@@ -194,8 +196,8 @@ function validation() {
 function printResult(solutions) {
   answersDiv.innerHTML = "";
   numberOfSolutions.textContent = `(${solutions.length})`;
-  
+
   for (const solution of solutions) {
-    answersDiv.innerHTML += `<p>${solution}</p>`
+    answersDiv.innerHTML += `<p>${solution}</p>`;
   }
 }
