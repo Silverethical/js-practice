@@ -9,6 +9,7 @@ const allInputs = document.querySelectorAll("input"),
 const operators = ["+", "-", "*", "/"],
   allPossibleOperations = arrayCreate(operators, 3);
 
+/** add additional operators where there are more than one instance of the one operator */
 for (const operator of operators) {
   allPossibleOperations.push(
     [operator, operator, "+"],
@@ -180,12 +181,15 @@ function calculateSolutions(numbers, goal) {
   }
 }
 
+/**
+ * input validation
+ */
 function validation() {
   if (
     Number(numbersInput.value) &&
     Number(goalInput.value) &&
     numbersInput.value.length === 4 &&
-    goalInput.value.length <= 2
+    goalInput.value.length <= 4
   ) {
     findSolutionsButton.disabled = false;
   } else {
@@ -193,6 +197,10 @@ function validation() {
   }
 }
 
+/**
+ * print all the solutions in document
+ * @param {object} solutions - an array of all the solutions
+ */
 function printResult(solutions) {
   answersDiv.innerHTML = "";
   numberOfSolutions.textContent = `(${solutions.length})`;
