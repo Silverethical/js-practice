@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>4=10</title>
-</head>
-<body>
-    
+  </head>
+  <body>
+    <div id="form">
+      <div>
+        <label for="numbers">Enter your 4 numbers here: </label>
+        <input type="text" name="numbers" id="numbers" maxlength="4" />
+      </div>
+      <div>
+        <label for="goal">Enter desired number here: </label>
+        <input type="text" name="goal" id="goal" maxlength="2" />
+      </div>
+
+      <div>
+        <button disabled id="findSolutionsButton" type="submit">
+          Find solutions
+        </button>
+      </div>
+    </div>
+
+    <h2>
+      <span>Solutions</span>
+      <span class="numberOfSolutions"></span>
+    </h2>
+
+    <div id="answers"></div>
 
     <script src="./assets/js/index.js"></script>
-</body>
+  </body>
 </html>
