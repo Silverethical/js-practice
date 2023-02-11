@@ -151,10 +151,15 @@ function calculateSolutions(numbers, goal) {
         for (const calculation of calculationList) {
           /** if calculation equals the desired number */
           if (eval(calculation) === Number(goal)) {
+            /** replace "*" and "/" with "×" and "÷" for better readability */
+            const solution = calculation
+              .replaceAll("*", "×")
+              .replaceAll("/", "÷");
+
             /** check if calculation is not already in result */
-            if (!result.includes(calculation))
+            if (!result.includes(solution))
               /** push the calculation to the result array */
-              result.push(calculation);
+              result.push(solution);
           }
         }
       }
