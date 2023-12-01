@@ -1,36 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4=10</title>
-  </head>
-  <body>
-    <div id="form">
-      <div>
-        <label for="numbers">Enter your 4 numbers here: </label>
-        <input type="text" name="numbers" id="numbers" maxlength="4" />
-      </div>
-      <div>
-        <label for="goal">Enter desired number here: </label>
-        <input type="text" name="goal" id="goal" maxlength="4" value="10" />
-      </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>SOLU</title>
+		<link rel="stylesheet" href="./assets/css/index.css" />
+	</head>
+	<body>
+		<div id="form">
+			<div>
+				<label for="numbers">Enter your 4 numbers here: </label>
+				<input type="text" name="numbers" id="numbers" maxlength="4" />
+			</div>
+			<div>
+				<label for="goal">Enter desired number here: </label>
+				<input
+					type="text"
+					name="goal"
+					id="goal"
+					maxlength="4"
+					value="10"
+				/>
+			</div>
 
-      <div>
-        <button disabled id="findSolutionsButton" type="submit">
-          Find solutions
-        </button>
-      </div>
-    </div>
+			<div>
+				<button disabled id="findSolutionsButton" type="submit">
+					Find solutions
+				</button>
+			</div>
+		</div>
 
-    <h2>
-      <span>Solutions</span>
-      <span class="numberOfSolutions"></span>
-    </h2>
+		<h2>
+			<span>Solutions</span>
+			<span class="numberOfSolutions"></span>
+		</h2>
 
-    <div id="answers"></div>
+		<div id="answers"></div>
 
-    <script src="./assets/js/index.js"></script>
-  </body>
+		<!-- header -->
+		<header>
+			<nav>
+				<!-- reset button -->
+				<button id="resetButton">
+					<img src="./assets/img/reset-icon.svg" alt="" />
+				</button>
+			</nav>
+		</header>
+
+		<!-- add some space -->
+		<div class="spacer"></div>
+
+		<div class="info">
+			<h1>SOLU</h1>
+		</div>
+
+		<!-- mountains -->
+		<div class="bgContainer">
+			<div class="mountains">
+				<div class="mountain-left-see-through"></div>
+				<div class="mountain-left"></div>
+				<div class="mountain-right"></div>
+			</div>
+		</div>
+
+		<!-- inputs -->
+		<section id="userInputs">
+			<div class="container">
+				<div>
+					<div class="operands-parent">
+						<span>Enter your 4 numbers here: </span>
+						<input class="operands" type="text" maxlength="1" />
+						<input class="operands" type="text" maxlength="1" />
+						<input class="operands" type="text" maxlength="1" />
+						<input class="operands" type="text" maxlength="1" />
+					</div>
+					<div class="goal-parent">
+						<span>Enter your goal here: </span>
+						<input
+							class="goal"
+							type="text"
+							name="goal"
+							maxlength="4"
+							value="10"
+						/>
+					</div>
+				</div>
+
+				<div class="solutions-parent">
+					<button id="findSolutionsButton">
+						<span>Find solutions</span>
+						<img src="./assets/img/find-icon.svg" alt="" />
+					</button>
+				</div>
+			</div>
+		</section>
+
+		<script src="./assets/js/index.js"></script>
+	</body>
 </html>
